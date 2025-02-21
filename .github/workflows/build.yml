@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-java@v4  # تحديث إلى الإصدار 4
         with:
           java-version: '11'  # تأكد من استخدام الإصدار المناسب
+          distribution: 'adopt'  # أو 'temurin' أو 'zulu' حسب التوزيعة التي تفضلها
 
       - name: Install required packages
         run: |
