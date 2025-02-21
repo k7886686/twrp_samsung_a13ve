@@ -35,13 +35,13 @@ jobs:
           wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
           unzip commandlinetools-linux-6609375_latest.zip
           rm commandlinetools-linux-6609375_latest.zip
-          # List the contents of the directory to check the structure
-          ls -la
           # Move the extracted folder to 'latest' if it exists
           if [ -d "cmdline-tools" ]; then
               mv cmdline-tools latest
+          elif [ -d "tools" ]; then
+              mv tools latest  # Some versions may extract to 'tools' instead of 'cmdline-tools'
           else
-              echo "cmdline-tools directory not found!"
+              echo "cmdline-tools or tools directory not found!"
               exit 1
           fi
           yes | $HOME/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$HOME/Android/Sdk --licenses
