@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # تحديث إلى الإصدار 4
 
       - name: Set up JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4  # تحديث إلى الإصدار 4
         with:
           java-version: '11'  # تأكد من استخدام الإصدار المناسب
 
@@ -44,7 +44,6 @@ jobs:
 
       - name: Build TWRP
         run: |
-          cd twrp_samsung_a13ve  # تأكد من الانتقال إلى مجلد المشروع
           . build/envsetup.sh
           lunch twrp_a13ve-eng  # تأكد من أن هذا هو اسم الجهاز الصحيح
           make -j$(nproc)
