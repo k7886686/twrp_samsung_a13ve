@@ -54,7 +54,8 @@ jobs:
 
       - name: Build TWRP
         run: |
-          . build/envsetup.sh
+          cd twrp_samsung_a13ve  # تأكد من الانتقال إلى مجلد المشروع الصحيح
+          . build/envsetup.sh  # تأكد من أن هذا هو المسار الصحيح
           lunch twrp_a13ve-eng  # تأكد من أن هذا هو اسم الجهاز الصحيح
           make -j$(nproc)
 
