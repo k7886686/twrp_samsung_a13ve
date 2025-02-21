@@ -58,4 +58,8 @@ jobs:
           lunch twrp_a13ve-eng  # تأكد من أن هذا هو اسم الجهاز الصحيح
           make -j$(nproc)
 
-      - name: Upload T
+      - name: Upload TWRP image
+        uses: actions/upload-artifact@v4  # تحديث إلى الإصدار 4
+        with:
+          name: twrp-image
+          path: out/target/product/a13ve/recovery.img  # تأكد من أن هذا هو المسار الصحيح
